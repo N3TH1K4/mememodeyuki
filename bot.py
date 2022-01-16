@@ -137,8 +137,8 @@ with bot:
           'text0':text0,
           'text1':text1
        }
-      response = requests.request('POST',URL,params=params).json():
-        await event.reply("me",response)
+      response = requests.request('POST',URL,params=params).json()
+      await bot.send_file("me",response)
 
 
 
