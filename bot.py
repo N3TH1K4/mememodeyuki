@@ -143,7 +143,7 @@ with bot:
       opener = urllib.request.URLopener()
       opener.addheader('User-Agent', userAgent)
       filename, headers = opener.retrieve(response['data']['url'], images[id-1]['name']+'.jpg')
-      await bot.send_file(event.sender_id,images[id-1]['name'])
+      await bot.send_file(event.chat_id,filename)
 
 
 
