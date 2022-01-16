@@ -23,7 +23,7 @@ with bot:
       images = [{'name':image['name'],'url':image['url'],'id':image['id']} for image in data]
       id =  1
       text0 = event.pattern_match.group(1)
-      text1 =  event.pattern_match.group(2)
+      text1 =  event.pattern_match.group(2,3)
       URL = 'https://api.imgflip.com/caption_image'
       params = {
           'username':username,
