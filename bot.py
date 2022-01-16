@@ -17,7 +17,7 @@ userAgent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) \
     Safari/537.36'
 with bot:
   
-    @bot.on(events.NewMessage(pattern="^/memes"))
+    @bot.on(events.NewMessage(pattern="^/meme (.*)"))
     async def ids(event):
       data = requests.get('https://api.imgflip.com/get_memes').json()['data']['memes']
       images = [{'name':image['name'],'url':image['url'],'id':image['id']} for image in data]
@@ -128,7 +128,7 @@ with bot:
 100 Blank Transparent Square
       
       """)
-      id =  event.pattern_match
+      id =  event.pattern_match.group(1)
       text0 = "Rem"
       text1 =  "Ram"
       URL = 'https://api.imgflip.com/caption_image'
