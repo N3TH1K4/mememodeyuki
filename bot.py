@@ -126,7 +126,7 @@ with bot:
       """)
       await event.reply("**Send The Number Of The Meme temp that you want to create a meme**")
       @bot.on(events.NewMessage(pattern="^/mid (.*)"))
-      async def my_event_handler(event)
+      async def my_event_handler(event):
         id = event.pattern_match.group(1)
         await event.reply("**Send The 1st text now**")
       @bot.on(events.NewMessage(pattern="^/text1 (.*)"))
