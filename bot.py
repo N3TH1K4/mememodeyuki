@@ -128,7 +128,7 @@ with bot:
 100 Blank Transparent Square
       
       """)
-      id = bot.utils.get_input_message("hehe")
+      id = await event.text
       text0 = "Rem"
       text1 =  "Ram"
       URL = 'https://api.imgflip.com/caption_image'
