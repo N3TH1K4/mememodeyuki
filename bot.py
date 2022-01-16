@@ -124,7 +124,28 @@ with bot:
 100 Blank Transparent Square
       
       """)
-      await event.reply("test")
+      await event.reply("**Send The Number Of The Meme temp that you want to create a meme**")
+      await event.NewMessage()
+        id = event.raw_text
+      await event.NewMessage()
+        text0 = event.raw_text
+      await event.NewMessage()
+        text1 =  event.raw_text
+      URL = 'https://api.imgflip.com/caption_image'
+      params = {
+          'username':username,
+          'password':password,
+          'template_id':images[id-1]['id'],
+          'text0':text0,
+          'text1':text1
+      }
+      response = requests.request('POST',URL,params=params).json()
+      print(response)
+
+#Save the meme
+      opener = urllib.request.URLopener()
+      opener.addheader('User-Agent', userAgent)
+      filename, headers = opener.retrieve(response['data']['url'], 'meme'+'.jpg')  
 
 
 
