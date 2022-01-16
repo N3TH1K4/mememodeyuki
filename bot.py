@@ -12,6 +12,18 @@ password = 'Nethika123'
 bot = TelegramClient('bot', api_id, api_hash).start(bot_token=bot_token)
 
 with bot:
+  
+    @bot.on(events.NewMessage(pattern="^/anime (.*)"))
+    async def ids(event):
+      data = requests.get('https://api.imgflip.com/get_memes').json()['data']['memes']
+      images = [{'name':image['name'],'url':image['url'],'id':image['id']} for image in data]
+
+#List all the memes
+      await event.reply('Here is the list of available memes : \n')
+      ctr = 1
+      for img in images:
+        await event.reply(ctr,img['name'])
+        ctr = ctr+1
 
 
 
