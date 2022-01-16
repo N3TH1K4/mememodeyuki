@@ -128,7 +128,7 @@ with bot:
 100 Blank Transparent Square
       
       """)
-      id =  event.pattern_match.group(1)
+      id =  event.pattern_match
       text0 = "Rem"
       text1 =  "Ram"
       URL = 'https://api.imgflip.com/caption_image'
