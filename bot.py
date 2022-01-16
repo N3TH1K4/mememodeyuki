@@ -128,9 +128,9 @@ with bot:
 100 Blank Transparent Square
       
       """)
-      id = 2
-      text0 = "Ram"
-      text1 =  "Rem"
+      id = 1
+      text0 = "Rem"
+      text1 =  "Ram"
       URL = 'https://api.imgflip.com/caption_image'
       params = {
           'username':username,
