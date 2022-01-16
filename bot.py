@@ -19,7 +19,6 @@ with bot:
   
     @bot.on(events.NewMessage(pattern="^/memes"))
     async def ids(event):
-      chat = await bot.chat_id() 
       data = requests.get('https://api.imgflip.com/get_memes').json()['data']['memes']
       images = [{'name':image['name'],'url':image['url'],'id':image['id']} for image in data]
 
@@ -144,8 +143,7 @@ with bot:
       opener = urllib.request.URLopener()
       opener.addheader('User-Agent', userAgent)
       filename, headers = opener.retrieve(response['data']['url'], "temp"+'.jpg')
-      file = await bot.upload_file('temp.jpg')
-      await bot.send_file(chat,file)
+      await bot.send_file(event.sender_id,"temp.jpg")
 
 
 
