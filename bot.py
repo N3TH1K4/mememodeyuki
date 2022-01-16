@@ -19,7 +19,9 @@ with bot:
       images = [{'name':image['name'],'url':image['url'],'id':image['id']} for image in data]
 
 #List all the memes
-      await event.reply("""Here is the list of available memes :
+      await event.reply("""**Here is the list of available meme Temps :**
+      
+      
 1 Drake Hotline Bling
 2 Two Buttons
 3 Distracted Boyfriend
