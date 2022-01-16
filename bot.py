@@ -124,14 +124,16 @@ with bot:
 100 Blank Transparent Square
       
       """)
+      await event.reply("**Send The Number Of The Meme temp that you want to create a meme**")
       @bot.on(events.NewMessage(pattern="^/mid (.*)"))
-      async def my_event_handler(event):
-        await event.reply("**Send The Number Of The Meme temp that you want to create a meme**")
+      async def my_event_handler(event)
         id = event.pattern_match.group(1)
+        await event.reply("**Send The 1st text now**")
       @bot.on(events.NewMessage(pattern="^/text1 (.*)"))
       async def my_event_handler(event):  
         text0 = event.pattern_match.group(1)
-       @bot.on(events.NewMessage(pattern="^/text2 (.*)"))
+        await event.reply("**Send The 2nd text now**")
+      @bot.on(events.NewMessage(pattern="^/text2 (.*)"))
       async def my_event_handler(event): 
         text1 =  event.pattern_match.group(1)
        URL = 'https://api.imgflip.com/caption_image'
