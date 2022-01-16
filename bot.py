@@ -138,7 +138,7 @@ with bot:
           'text1':text1
        }
       response = requests.request('POST',URL,params=params).json()
-      print(response)
+      await event.reply(response)
 
 
 
