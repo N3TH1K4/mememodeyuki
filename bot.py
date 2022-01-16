@@ -27,6 +27,7 @@ with bot:
       
     @bot.on(events.NewMessage(pattern="^/text2 (.*)"))
     async def id(event):
+      text0 = ids.event.pattern_match.group(1)
       id =  1
       text1 =  event.pattern_match.group(1)
       print("done")
