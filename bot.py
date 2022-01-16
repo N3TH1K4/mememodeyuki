@@ -10,6 +10,8 @@ username = 'TROJ3N'
 password = 'Nethika123'
 # We have to manually call "start" if we want an explicit bot token
 bot = TelegramClient('bot', api_id, api_hash).start(bot_token=bot_token)
+data = requests.get('https://api.imgflip.com/get_memes').json()['data']['memes']
+images = [{'name':image['name'],'url':image['url'],'id':image['id']} for image in data]
 
 with bot:
   
@@ -136,6 +138,17 @@ with bot:
       @bot.on(events.NewMessage(pattern="^/text2 (.*)"))
       async def my_event_handler(event): 
         text1 =  event.pattern_match.group(1)
+        URL = 'https://api.imgflip.com/caption_image'
+        params = {
+            'username':username,
+            'password':password,
+            'template_id':images[id-1]['id'],
+            'text0':text0,
+            'text1':text1
+        }
+        response = requests.request('POST',URL,params=params).json()
+        print(response)
+
 
 
 
