@@ -148,8 +148,8 @@ with bot:
       response = requests.request('POST',URL,params=params).json()
       opener = urllib.request.URLopener()
       opener.addheader('User-Agent', userAgent)
-      filename, headers = opener.retrieve(response['data']['url'], "temp"+'.jpg')
-      await bot.send_file(event.sender_id,"temp.jpg")
+      filename, headers = opener.retrieve(response['data']['url'], "tem"+'.jpg')
+      await bot.send_file(event.sender_id,"tem.jpg")
 
 
 
