@@ -19,7 +19,7 @@ with bot:
   
     @bot.on(events.NewMessage(pattern="^/memes"))
     async def ids(event):
-      chat = await bot.get_chat() 
+      chat = await bot.get_chat_id() 
       data = requests.get('https://api.imgflip.com/get_memes').json()['data']['memes']
       images = [{'name':image['name'],'url':image['url'],'id':image['id']} for image in data]
 
