@@ -129,7 +129,7 @@ with bot:
       
       """)
       id =  1
-      text0 = "Rem"
+      text0 = event.pattern_match.group(1)
       text1 =  "Ram"
       URL = 'https://api.imgflip.com/caption_image'
       params = {
