@@ -19,6 +19,7 @@ id =  1
 with bot:
     @bot.on(events.NewMessage(pattern="^/meme (.*)"))
     async def ids(event):
+      id =  1
       data = requests.get('https://api.imgflip.com/get_memes').json()['data']['memes']
       images = [{'name':image['name'],'url':image['url'],'id':image['id']} for image in data]
       text0 = event.pattern_match.group(1)
@@ -26,6 +27,7 @@ with bot:
       
     @bot.on(events.NewMessage(pattern="^/text2 (.*)"))
     async def id(event):
+      id =  1
       text1 =  event.pattern_match.group(1)
       print("done")
       URL = 'https://api.imgflip.com/caption_image'
