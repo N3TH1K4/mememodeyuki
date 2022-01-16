@@ -128,23 +128,27 @@ with bot:
       async def my_event_handler(event):
         await event.reply("**Send The Number Of The Meme temp that you want to create a meme**")
         id = event.pattern_match.group(1)
-        text0 = event.pattern_match.group(2)
-        text1 =  event.pattern_match.group(3)
-        URL = 'https://api.imgflip.com/caption_image'
-        params = {
-            'username':username,
-            'password':password,
-            'template_id':images[id-1]['id'],
-            'text0':text0,
-            'text1':text1
-        }
-        response = requests.request('POST',URL,params=params).json()
-        print(response)
+      @bot.on(events.NewMessage(pattern="^/text1 (.*)"))
+      async def my_event_handler(event):  
+        text0 = event.pattern_match.group(1)
+       @bot.on(events.NewMessage(pattern="^/text2 (.*)"))
+      async def my_event_handler(event): 
+        text1 =  event.pattern_match.group(1)
+       URL = 'https://api.imgflip.com/caption_image'
+       params = {
+           'username':username,
+           'password':password,
+           'template_id':images[id-1]['id'],
+           'text0':text0,
+           'text1':text1
+       }
+       response = requests.request('POST',URL,params=params).json()
+       print(response)
 
 #Save the meme
-        opener = urllib.request.URLopener()
-        opener.addheader('User-Agent', userAgent)
-        filename, headers = opener.retrieve(response['data']['url'], 'meme'+'.jpg')  
+       opener = urllib.request.URLopener()
+       opener.addheader('User-Agent', userAgent)
+       filename, headers = opener.retrieve(response['data']['url'], 'meme'+'.jpg')  
 
 
 
