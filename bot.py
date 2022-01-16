@@ -21,8 +21,27 @@ with bot:
     async def ids(event):
       data = requests.get('https://api.imgflip.com/get_memes').json()['data']['memes']
       images = [{'name':image['name'],'url':image['url'],'id':image['id']} for image in data]
+      id =  1
+      text0 = event.pattern_match.group(1)
+      text1 =  "Ram"
+      URL = 'https://api.imgflip.com/caption_image'
+      params = {
+          'username':username,
+          'password':password,
+          'template_id':images[id-1]['id'],
+          'text0':text0,
+          'text1':text1
+       }
+      response = requests.request('POST',URL,params=params).json()
+      opener = urllib.request.URLopener()
+      opener.addheader('User-Agent', userAgent)
+      filename, headers = opener.retrieve(response['data']['url'], images[id-1]['name']+'.jpg')
+      await bot.send_file(event.chat_id,filename)
 
-#List all the memes
+
+
+    @bot.on(events.NewMessage(pattern="^/temps"))
+    async def memetemp(event):
       await event.reply("""**Here is the list of available meme Temps :**
       
       
@@ -128,27 +147,6 @@ with bot:
 100 Blank Transparent Square
       
       """)
-      id =  1
-      text0 = event.pattern_match.group(1)
-      text1 =  "Ram"
-      URL = 'https://api.imgflip.com/caption_image'
-      params = {
-          'username':username,
-          'password':password,
-          'template_id':images[id-1]['id'],
-          'text0':text0,
-          'text1':text1
-       }
-      response = requests.request('POST',URL,params=params).json()
-      opener = urllib.request.URLopener()
-      opener.addheader('User-Agent', userAgent)
-      filename, headers = opener.retrieve(response['data']['url'], images[id-1]['name']+'.jpg')
-      await bot.send_file(event.chat_id,filename)
-
-
-
-
-
 
 
 
