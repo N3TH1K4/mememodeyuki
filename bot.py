@@ -22,7 +22,7 @@ with bot:
       await event.reply('Here is the list of available memes : \n')
       ctr = 1
       for img in images:
-        await event.reply(ctr,img['name'])
+        await event.send_message(ctr,img['name'])
         ctr = ctr+1
 
 
