@@ -128,7 +128,9 @@ with bot:
 100 Blank Transparent Square
       
       """)
-      id = await event.send_message()
+      @bot.on(events.NewMessage())
+      async def handler(event):  
+       id = await event.raw_text
       text0 = await event.send_message()
       text1 =  await event.send_message()
       URL = 'https://api.imgflip.com/caption_image'
