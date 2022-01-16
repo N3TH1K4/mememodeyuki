@@ -128,9 +128,9 @@ with bot:
 100 Blank Transparent Square
       
       """)
-      id = await events.NewMessage()
-      text0 = await events.NewMessage()
-      text1 =  await events.NewMessage()
+      id = await event.send_message()
+      text0 = await event.send_message()
+      text1 =  await event.send_message()
       URL = 'https://api.imgflip.com/caption_image'
       params = {
           'username':username,
