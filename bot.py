@@ -128,15 +128,9 @@ with bot:
 100 Blank Transparent Square
       
       """)
-      @bot.on(events.NewMessage())
-      async def handler(event):  
-       id = event.raw_text
-      @bot.on(events.NewMessage())
-      async def handler(event):  
-       text0 = event.raw_text
-      @bot.on(events.NewMessage())
-      async def handler(event):
-       text1 =  event.raw_text
+      id = 2
+      text0 = "test"
+      text1 =  "test"
       URL = 'https://api.imgflip.com/caption_image'
       params = {
           'username':username,
