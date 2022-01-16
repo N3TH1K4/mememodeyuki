@@ -129,8 +129,8 @@ with bot:
       
       """)
       id = 2
-      text0 = "test"
-      text1 =  "test"
+      text0 = "Ram"
+      text1 =  "Rem"
       URL = 'https://api.imgflip.com/caption_image'
       params = {
           'username':username,
@@ -142,8 +142,8 @@ with bot:
       response = requests.request('POST',URL,params=params).json()
       opener = urllib.request.URLopener()
       opener.addheader('User-Agent', userAgent)
-      filename, headers = opener.retrieve(response['data']['url'], "tem"+'.jpg')
-      await bot.send_file(event.sender_id,"tem.jpg")
+      filename, headers = opener.retrieve(response['data']['url'], images[id-1]['name']+'.jpg')
+      await bot.send_file(event.sender_id,images[id-1]['name'])
 
 
 
