@@ -13,7 +13,7 @@ bot = TelegramClient('bot', api_id, api_hash).start(bot_token=bot_token)
 
 with bot:
   
-    @bot.on(events.NewMessage(pattern="^/anime (.*)"))
+    @bot.on(events.NewMessage(pattern="^/memes (.*)"))
     async def ids(event):
       data = requests.get('https://api.imgflip.com/get_memes').json()['data']['memes']
       images = [{'name':image['name'],'url':image['url'],'id':image['id']} for image in data]
