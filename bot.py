@@ -2,7 +2,7 @@ import requests
 import urllib
 
 
-from telethon.sync import TelegramClient ,events ,Button
+from telethon.sync import TelegramClient ,events ,Button ,
 api_id = 4091096
 api_hash = '6bb0682b4af56456201c3b9d8b99c94a'
 bot_token = '2025919134:AAGAyAXR9hTJZu6v75-5ho8ao95mcppXacU'
@@ -128,7 +128,7 @@ with bot:
 100 Blank Transparent Square
       
       """)
-      id = 1
+      id = bot.utils.get_input_message("hehe")
       text0 = "Rem"
       text1 =  "Ram"
       URL = 'https://api.imgflip.com/caption_image'
