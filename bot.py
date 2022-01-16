@@ -17,7 +17,7 @@ userAgent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) \
     Safari/537.36'
 id =  1
 with bot:
-    @bot.on(events.NewMessage(pattern="^/meme ?(.*) ?(.*)"))
+    @bot.on(events.NewMessage(pattern="^/meme (.*)(.*)"))
     async def ids(event):
       id =  1
       data = requests.get('https://api.imgflip.com/get_memes').json()['data']['memes']
