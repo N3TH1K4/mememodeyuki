@@ -249,14 +249,14 @@ with bot:
         if event.data == b'1m':
             await event.edit("""Use /meme1 <text1> <text2> To Generate A Meme
             **Template** :- Drake Hotline Bling
-            """,buttons=[[ Button.inline('Back', data =b'back')],])
+            """,buttons=[[ Button.inline('Back', data =b'backk')],])
             
     
     
         elif event.data == b'left':
                  await event.delete()
             
-        elif event.data == b'back':
+        elif event.data == b'backk':
                    await event.edit("""**Here is the list of available meme Temps:**
       
       
