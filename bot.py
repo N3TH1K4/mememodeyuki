@@ -361,7 +361,7 @@ with bot:
 99 Simba Shadowy Place
 100 Blank Transparent Square
       
-      """,buttons=[[ Button.inline('1', data =b'1m')],])
+      """,buttons=[[ Button.inline('1', data =b'1m')],[Button.inline('Back',data= b'left')],])
 
 
 
