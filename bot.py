@@ -16,7 +16,7 @@ userAgent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) \
     AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.117 \
     Safari/537.36'
 with bot:
-    @bot.on(events.NewMessage(pattern="^/meme (.*) (.*)"))
+    @bot.on(events.NewMessage(pattern="^/meme1 (.*) (.*)"))
     async def ids(event):
       id =  1
       data = requests.get('https://api.imgflip.com/get_memes').json()['data']['memes']
@@ -37,6 +37,98 @@ with bot:
       opener.addheader('User-Agent', userAgent)
       filename, headers = opener.retrieve(response['data']['url'], images[id-1]['name']+'.jpg')
       await bot.send_file(event.chat_id,filename)
+    
+    @bot.on(events.NewMessage(pattern="^/meme2 (.*) (.*)"))
+    async def ids(event):
+      id =  2
+      data = requests.get('https://api.imgflip.com/get_memes').json()['data']['memes']
+      images = [{'name':image['name'],'url':image['url'],'id':image['id']} for image in data]
+      text0 = event.pattern_match.group(1)
+      text1 =  event.pattern_match.group(2)
+      print("done")
+      URL = 'https://api.imgflip.com/caption_image'
+      params = {
+          'username':username,
+          'password':password,
+          'template_id':images[id-1]['id'],
+          'text0':text0,
+          'text1':text1
+       }
+      response = requests.request('POST',URL,params=params).json()
+      opener = urllib.request.URLopener()
+      opener.addheader('User-Agent', userAgent)
+      filename, headers = opener.retrieve(response['data']['url'], images[id-1]['name']+'.jpg')
+      await bot.send_file(event.chat_id,filename)
+    
+    @bot.on(events.NewMessage(pattern="^/meme3 (.*) (.*)"))
+    async def ids(event):
+      id =  3
+      data = requests.get('https://api.imgflip.com/get_memes').json()['data']['memes']
+      images = [{'name':image['name'],'url':image['url'],'id':image['id']} for image in data]
+      text0 = event.pattern_match.group(1)
+      text1 =  event.pattern_match.group(2)
+      print("done")
+      URL = 'https://api.imgflip.com/caption_image'
+      params = {
+          'username':username,
+          'password':password,
+          'template_id':images[id-1]['id'],
+          'text0':text0,
+          'text1':text1
+       }
+      response = requests.request('POST',URL,params=params).json()
+      opener = urllib.request.URLopener()
+      opener.addheader('User-Agent', userAgent)
+      filename, headers = opener.retrieve(response['data']['url'], images[id-1]['name']+'.jpg')
+      await bot.send_file(event.chat_id,filename)
+    
+    @bot.on(events.NewMessage(pattern="^/meme4 (.*) (.*)"))
+    async def ids(event):
+      id =  4
+      data = requests.get('https://api.imgflip.com/get_memes').json()['data']['memes']
+      images = [{'name':image['name'],'url':image['url'],'id':image['id']} for image in data]
+      text0 = event.pattern_match.group(1)
+      text1 =  event.pattern_match.group(2)
+      print("done")
+      URL = 'https://api.imgflip.com/caption_image'
+      params = {
+          'username':username,
+          'password':password,
+          'template_id':images[id-1]['id'],
+          'text0':text0,
+          'text1':text1
+       }
+      response = requests.request('POST',URL,params=params).json()
+      opener = urllib.request.URLopener()
+      opener.addheader('User-Agent', userAgent)
+      filename, headers = opener.retrieve(response['data']['url'], images[id-1]['name']+'.jpg')
+      await bot.send_file(event.chat_id,filename)
+    
+    @bot.on(events.NewMessage(pattern="^/meme5 (.*) (.*)"))
+    async def ids(event):
+      id =  5
+      data = requests.get('https://api.imgflip.com/get_memes').json()['data']['memes']
+      images = [{'name':image['name'],'url':image['url'],'id':image['id']} for image in data]
+      text0 = event.pattern_match.group(1)
+      text1 =  event.pattern_match.group(2)
+      print("done")
+      URL = 'https://api.imgflip.com/caption_image'
+      params = {
+          'username':username,
+          'password':password,
+          'template_id':images[id-1]['id'],
+          'text0':text0,
+          'text1':text1
+       }
+      response = requests.request('POST',URL,params=params).json()
+      opener = urllib.request.URLopener()
+      opener.addheader('User-Agent', userAgent)
+      filename, headers = opener.retrieve(response['data']['url'], images[id-1]['name']+'.jpg')
+      await bot.send_file(event.chat_id,filename)
+
+
+
+     
 
 
 
