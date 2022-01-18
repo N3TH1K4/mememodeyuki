@@ -75,7 +75,7 @@ with bot:
           'password':password,
           'template_id':images[id-1]['id'],
           'text0':text0,
-          'text1':text1
+          'text1':text1,
           'text2':text2
        }
       response = requests.request('POST',URL,params=params).json()
@@ -100,8 +100,8 @@ with bot:
           'password':password,
           'template_id':images[id-1]['id'],
           'text0':text0,
-          'text1':text1
-          'text2':text2
+          'text1':text1,
+          'text2':text2,
           'text3':text3
        }
       response = requests.request('POST',URL,params=params).json()
