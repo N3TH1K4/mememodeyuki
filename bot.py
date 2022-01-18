@@ -253,11 +253,11 @@ with bot:
             
     
     
-    elif event.data == b'left':
-                await event.delete()
+        elif event.data == b'left':
+                 await event.delete()
             
-    elif event.data == b'back':
-                await event.edit("""**Here is the list of available meme Temps:**
+        elif event.data == b'back':
+                   await event.edit("""**Here is the list of available meme Temps:**
       
       
 1 Drake Hotline Bling
