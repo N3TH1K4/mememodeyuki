@@ -60,13 +60,14 @@ with bot:
       filename, headers = opener.retrieve(response['data']['url'], images[id-1]['name']+'.jpg')
       await bot.send_file(event.chat_id,filename)
     
-    @bot.on(events.NewMessage(pattern="^/meme3 (.*) (.*)"))
+    @bot.on(events.NewMessage(pattern="^/meme3 (.*) (.*) (.*)"))
     async def ids(event):
       id =  3
       data = requests.get('https://api.imgflip.com/get_memes').json()['data']['memes']
       images = [{'name':image['name'],'url':image['url'],'id':image['id']} for image in data]
       text0 = event.pattern_match.group(1)
       text1 =  event.pattern_match.group(2)
+      text2 =  event.pattern_match.group(3)
       print("done")
       URL = 'https://api.imgflip.com/caption_image'
       params = {
@@ -75,6 +76,7 @@ with bot:
           'template_id':images[id-1]['id'],
           'text0':text0,
           'text1':text1
+          'text2':text2
        }
       response = requests.request('POST',URL,params=params).json()
       opener = urllib.request.URLopener()
@@ -82,13 +84,15 @@ with bot:
       filename, headers = opener.retrieve(response['data']['url'], images[id-1]['name']+'.jpg')
       await bot.send_file(event.chat_id,filename)
     
-    @bot.on(events.NewMessage(pattern="^/meme4 (.*) (.*)"))
+    @bot.on(events.NewMessage(pattern="^/meme4 (.*) (.*) (.*) (.*)"))
     async def ids(event):
       id =  4
       data = requests.get('https://api.imgflip.com/get_memes').json()['data']['memes']
       images = [{'name':image['name'],'url':image['url'],'id':image['id']} for image in data]
       text0 = event.pattern_match.group(1)
       text1 =  event.pattern_match.group(2)
+      text2 =  event.pattern_match.group(3)
+      text3 =  event.pattern_match.group(4)
       print("done")
       URL = 'https://api.imgflip.com/caption_image'
       params = {
@@ -97,6 +101,8 @@ with bot:
           'template_id':images[id-1]['id'],
           'text0':text0,
           'text1':text1
+          'text2':text2
+          'text3':text3
        }
       response = requests.request('POST',URL,params=params).json()
       opener = urllib.request.URLopener()
@@ -107,6 +113,117 @@ with bot:
     @bot.on(events.NewMessage(pattern="^/meme5 (.*) (.*)"))
     async def ids(event):
       id =  5
+      data = requests.get('https://api.imgflip.com/get_memes').json()['data']['memes']
+      images = [{'name':image['name'],'url':image['url'],'id':image['id']} for image in data]
+      text0 = event.pattern_match.group(1)
+      text1 =  event.pattern_match.group(2)
+      print("done")
+      URL = 'https://api.imgflip.com/caption_image'
+      params = {
+          'username':username,
+          'password':password,
+          'template_id':images[id-1]['id'],
+          'text0':text0,
+          'text1':text1
+       }
+      response = requests.request('POST',URL,params=params).json()
+      opener = urllib.request.URLopener()
+      opener.addheader('User-Agent', userAgent)
+      filename, headers = opener.retrieve(response['data']['url'], images[id-1]['name']+'.jpg')
+      await bot.send_file(event.chat_id,filename)
+    
+    @bot.on(events.NewMessage(pattern="^/meme6 (.*) (.*)"))
+    async def ids(event):
+      id =  6
+      data = requests.get('https://api.imgflip.com/get_memes').json()['data']['memes']
+      images = [{'name':image['name'],'url':image['url'],'id':image['id']} for image in data]
+      text0 = event.pattern_match.group(1)
+      text1 =  event.pattern_match.group(2)
+      print("done")
+      URL = 'https://api.imgflip.com/caption_image'
+      params = {
+          'username':username,
+          'password':password,
+          'template_id':images[id-1]['id'],
+          'text0':text0,
+          'text1':text1
+       }
+      response = requests.request('POST',URL,params=params).json()
+      opener = urllib.request.URLopener()
+      opener.addheader('User-Agent', userAgent)
+      filename, headers = opener.retrieve(response['data']['url'], images[id-1]['name']+'.jpg')
+      await bot.send_file(event.chat_id,filename)
+    
+    @bot.on(events.NewMessage(pattern="^/meme7 (.*) (.*)"))
+    async def ids(event):
+      id =  7
+      data = requests.get('https://api.imgflip.com/get_memes').json()['data']['memes']
+      images = [{'name':image['name'],'url':image['url'],'id':image['id']} for image in data]
+      text0 = event.pattern_match.group(1)
+      text1 =  event.pattern_match.group(2)
+      print("done")
+      URL = 'https://api.imgflip.com/caption_image'
+      params = {
+          'username':username,
+          'password':password,
+          'template_id':images[id-1]['id'],
+          'text0':text0,
+          'text1':text1
+       }
+      response = requests.request('POST',URL,params=params).json()
+      opener = urllib.request.URLopener()
+      opener.addheader('User-Agent', userAgent)
+      filename, headers = opener.retrieve(response['data']['url'], images[id-1]['name']+'.jpg')
+      await bot.send_file(event.chat_id,filename)
+    
+    @bot.on(events.NewMessage(pattern="^/meme8 (.*) (.*)"))
+    async def ids(event):
+      id =  8
+      data = requests.get('https://api.imgflip.com/get_memes').json()['data']['memes']
+      images = [{'name':image['name'],'url':image['url'],'id':image['id']} for image in data]
+      text0 = event.pattern_match.group(1)
+      text1 =  event.pattern_match.group(2)
+      print("done")
+      URL = 'https://api.imgflip.com/caption_image'
+      params = {
+          'username':username,
+          'password':password,
+          'template_id':images[id-1]['id'],
+          'text0':text0,
+          'text1':text1
+       }
+      response = requests.request('POST',URL,params=params).json()
+      opener = urllib.request.URLopener()
+      opener.addheader('User-Agent', userAgent)
+      filename, headers = opener.retrieve(response['data']['url'], images[id-1]['name']+'.jpg')
+      await bot.send_file(event.chat_id,filename)
+    
+    
+    @bot.on(events.NewMessage(pattern="^/meme9 (.*) (.*)"))
+    async def ids(event):
+      id =  9
+      data = requests.get('https://api.imgflip.com/get_memes').json()['data']['memes']
+      images = [{'name':image['name'],'url':image['url'],'id':image['id']} for image in data]
+      text0 = event.pattern_match.group(1)
+      text1 =  event.pattern_match.group(2)
+      print("done")
+      URL = 'https://api.imgflip.com/caption_image'
+      params = {
+          'username':username,
+          'password':password,
+          'template_id':images[id-1]['id'],
+          'text0':text0,
+          'text1':text1
+       }
+      response = requests.request('POST',URL,params=params).json()
+      opener = urllib.request.URLopener()
+      opener.addheader('User-Agent', userAgent)
+      filename, headers = opener.retrieve(response['data']['url'], images[id-1]['name']+'.jpg')
+      await bot.send_file(event.chat_id,filename)
+    
+    @bot.on(events.NewMessage(pattern="^/meme10 (.*) (.*)"))
+    async def ids(event):
+      id =  10
       data = requests.get('https://api.imgflip.com/get_memes').json()['data']['memes']
       images = [{'name':image['name'],'url':image['url'],'id':image['id']} for image in data]
       text0 = event.pattern_match.group(1)
