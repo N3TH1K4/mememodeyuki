@@ -43,9 +43,13 @@ async def meme1(bot, msg: Message):
     text0 = await bot.ask(
         chat.id,txt1
     )
+    if await is_cancel(msg, text0.text):
+        return
     text1 =  await bot.ask(
         chat.id,txt2
     )
+    if await is_cancel(msg, text1.text):
+        return
         
     print("done")
     URL = 'https://api.imgflip.com/caption_image'
