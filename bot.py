@@ -23,7 +23,7 @@ userAgent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) \
 
 
 @bot.on_message(filters.command(commands=['meme']) & filters.private)
-def meme1(client.message):
+def meme1(client,message):
     message.reply_text(text="yooo")
     
 bot.run()    
