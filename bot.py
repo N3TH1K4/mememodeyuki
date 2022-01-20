@@ -27,7 +27,8 @@ userAgent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) \
     AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.117 \
     Safari/537.36'
 API_TEXT ="blaaa"
-
+txt1 = "send The First text"
+txt2 = "send  The Second text"
 @bot.on_message(filters.command(commands=['meme']) & filters.private)
 async def meme1(bot, msg: Message):
     chat = msg.chat
@@ -36,6 +37,31 @@ async def meme1(bot, msg: Message):
         chat.id,API_TEXT
     )
     await bot.send_message(chat.id,api.text)
+    id =  1
+    data = requests.get('https://api.imgflip.com/get_memes').json()['data']['memes']
+    images = [{'name':image['name'],'url':image['url'],'id':image['id']} for image in data]
+    text0 = await bot.ask(
+        chat.id,txt1
+    )
+    text1 =  await bot.ask(
+        chat.id,txt2
+    )
+        
+    print("done")
+    URL = 'https://api.imgflip.com/caption_image'
+    params = {
+          'username':username,
+          'password':password,
+          'template_id':images[id-1]['id'],
+          'text0':text0,
+          'text1':text1
+       }
+    response = requests.request('POST',URL,params=params).json()
+    opener = urllib.request.URLopener()
+    opener.addheader('User-Agent', userAgent)
+    filename, headers = opener.retrieve(response['data']['url'], images[id-1]['name']+'.jpg')
+    await bot.send_photo(chat.id,filename)
+    
    
     
 bot.run()    
