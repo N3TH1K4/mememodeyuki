@@ -33,7 +33,7 @@ async def meme1(bot, msg: Message,):
     chat = msg.chat
     msg.reply(msg.chat.id,"yooo")
     api = await bot.ask(
-        chat.id
+        chat.id,API_TEXT
     )
     if await is_cancel(msg, api.text,API_TEXT):
         return
