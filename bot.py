@@ -35,7 +35,7 @@ async def meme1(bot, msg: Message):
     api = await bot.ask(
         chat.id,API_TEXT
     )
-    await bot.send_message(chat.id,api)
+    await bot.send_message(chat.id,api.text)
    
     
 bot.run()    
