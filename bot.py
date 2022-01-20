@@ -22,8 +22,7 @@ with bot:
       data = requests.get('https://api.imgflip.com/get_memes').json()['data']['memes']
       images = [{'name':image['name'],'url':image['url'],'id':image['id']} for image in data]
       text0 = event.pattern_match.group(1)
-      text1 =  await event.ask(
-        chat.id,"hello")
+      text1 =  event.pattern_match.group(2)
         
       print("done")
       URL = 'https://api.imgflip.com/caption_image'
