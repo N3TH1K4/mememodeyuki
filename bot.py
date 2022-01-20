@@ -25,7 +25,7 @@ API_TEXT ="blaaa"
 @bot.on_message(filters.command(commands=['meme']) & filters.private)
 async def meme1(client, msg: Message,):
     msg.reply_text(text="yooo")
-    api = await bot.ask(
+    api = await client.ask(
         chat.id
     )
     if await is_cancel(msg, api.text,API_TEXT):
