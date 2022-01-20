@@ -26,18 +26,17 @@ images = [{'name':image['name'],'url':image['url'],'id':image['id']} for image i
 userAgent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) \
     AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.117 \
     Safari/537.36'
-API_TEXT ="blaaa"
-txt1 = "send The First text"
-txt2 = "send  The Second text"
+txt1 = "**Send The First text**"
+txt2 = "**Send  The Second text**"
+idtxt = "**Send The Template Number**"
 @bot.on_message(filters.command(commands=['meme']) & filters.private)
 async def meme1(bot, msg: Message):
     chat = msg.chat
-    msg.reply(msg.chat.id,"yooo")
-    api = await bot.ask(
-        chat.id,API_TEXT
+    await bot.send_message(chat.id,"**Meme Generator @YukinonTheCuteBot")
+    idt =  await bot.ask(
+        chat.id,idtxt
     )
-    await bot.send_message(chat.id,api.text)
-    id =  1
+    id = idt.text
     data = requests.get('https://api.imgflip.com/get_memes').json()['data']['memes']
     images = [{'name':image['name'],'url':image['url'],'id':image['id']} for image in data]
     text00 = await bot.ask(
