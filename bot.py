@@ -3,6 +3,12 @@ import urllib
 from pyrogram import filters, Client
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 from pyromod import listen
+from pyrogram.errors import (
+    SessionPasswordNeeded, FloodWait,
+    PhoneNumberInvalid, ApiIdInvalid,
+    PhoneCodeInvalid, PhoneCodeExpired
+)
+
 apiid = 4091096
 apihash = '6bb0682b4af56456201c3b9d8b99c94a'
 bottoken = '2025919134:AAGAyAXR9hTJZu6v75-5ho8ao95mcppXacU'
