@@ -35,6 +35,7 @@ async def meme1(bot, msg: Message):
     api = await bot.ask(
         chat.id,API_TEXT
     )
+def cmd(bot, msg: Message):
     msg.reply(api)
    
     
