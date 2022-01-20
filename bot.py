@@ -64,7 +64,7 @@ async def meme1(bot, msg: Message):
 async def meme1(bot, msg: Message):
     chat = msg.chat
     await bot.send_message(chat.id,"**Meme Generator @Yukinonthecutebot**\n\n`Template`: Two Buttons\n`Template ID`: 2")
-    id = 1
+    id = 2
     data = requests.get('https://api.imgflip.com/get_memes').json()['data']['memes']
     images = [{'name':image['name'],'url':image['url'],'id':image['id']} for image in data]
     text00 = await bot.ask(
@@ -97,7 +97,7 @@ async def meme1(bot, msg: Message):
 async def meme1(bot, msg: Message):
     chat = msg.chat
     await bot.send_message(chat.id,"**Meme Generator @Yukinonthecutebot**\n\n`Template`: Distracted Boyfriend\n`Template ID`: 3")
-    id = 1
+    id = 3
     data = requests.get('https://api.imgflip.com/get_memes').json()['data']['memes']
     images = [{'name':image['name'],'url':image['url'],'id':image['id']} for image in data]
     text00 = await bot.ask(
@@ -129,7 +129,7 @@ async def meme1(bot, msg: Message):
 async def meme1(bot, msg: Message):
     chat = msg.chat
     await bot.send_message(chat.id,"**Meme Generator @Yukinonthecutebot**\n\n`Template`: Running Away Balloon\n`Template ID`: 4")
-    id = 1
+    id = 4
     data = requests.get('https://api.imgflip.com/get_memes').json()['data']['memes']
     images = [{'name':image['name'],'url':image['url'],'id':image['id']} for image in data]
     text00 = await bot.ask(
@@ -161,7 +161,7 @@ async def meme1(bot, msg: Message):
 async def meme1(bot, msg: Message):
     chat = msg.chat
     await bot.send_message(chat.id,"**Meme Generator @Yukinonthecutebot**\n\n`Template`: Left Exit 12 Off Ramp\n`Template ID`: 5")
-    id = 1
+    id = 5
     data = requests.get('https://api.imgflip.com/get_memes').json()['data']['memes']
     images = [{'name':image['name'],'url':image['url'],'id':image['id']} for image in data]
     text00 = await bot.ask(
@@ -193,7 +193,7 @@ async def meme1(bot, msg: Message):
 async def meme1(bot, msg: Message):
     chat = msg.chat
     await bot.send_message(chat.id,"**Meme Generator @Yukinonthecutebot**\n\n`Template`: UNO Draw 25 Cards\n`Template ID`: 6")
-    id = 1
+    id = 6
     data = requests.get('https://api.imgflip.com/get_memes').json()['data']['memes']
     images = [{'name':image['name'],'url':image['url'],'id':image['id']} for image in data]
     text00 = await bot.ask(
@@ -225,7 +225,7 @@ async def meme1(bot, msg: Message):
 async def meme1(bot, msg: Message):
     chat = msg.chat
     await bot.send_message(chat.id,"**Meme Generator @Yukinonthecutebot**\n\n`Template`: Buff Doge vs. Cheems\n`Template ID`: 7")
-    id = 1
+    id = 7
     data = requests.get('https://api.imgflip.com/get_memes').json()['data']['memes']
     images = [{'name':image['name'],'url':image['url'],'id':image['id']} for image in data]
     text00 = await bot.ask(
