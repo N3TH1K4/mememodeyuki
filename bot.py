@@ -29,14 +29,13 @@ userAgent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) \
 API_TEXT ="blaaa"
 
 @bot.on_message(filters.command(commands=['meme']) & filters.private)
-async def meme1(bot, msg: Message,):
+async def meme1(bot, msg: Message):
     chat = msg.chat
     msg.reply(msg.chat.id,"yooo")
     api = await bot.ask(
         chat.id,API_TEXT
     )
-    if await is_cancel(msg, api.text,API_TEXT):
-        return
     msg.reply(api)
+   
     
 bot.run()    
