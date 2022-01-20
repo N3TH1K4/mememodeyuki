@@ -40,17 +40,14 @@ async def meme1(bot, msg: Message):
     id =  1
     data = requests.get('https://api.imgflip.com/get_memes').json()['data']['memes']
     images = [{'name':image['name'],'url':image['url'],'id':image['id']} for image in data]
-    text0 = await bot.ask(
+    text00 = await bot.ask(
         chat.id,txt1
     )
-    if await is_cancel(msg, text0.text):
-        return
-    text1 =  await bot.ask(
+    text0 = text00.text
+    text11 =  await bot.ask(
         chat.id,txt2
     )
-    if await is_cancel(msg, text1.text):
-        return
-        
+    text1 = text11.text   
     print("done")
     URL = 'https://api.imgflip.com/caption_image'
     params = {
