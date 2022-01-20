@@ -23,7 +23,7 @@ userAgent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) \
 API_TEXT ="blaaa"
 
 @bot.on_message(filters.command(commands=['meme']) & filters.private)
-async def meme1(bot: client, msg: Message):
+async def meme1(client, msg: Message,bot):
     msg.reply_text(text="yooo")
     api = await bot.ask(
         chat.id
