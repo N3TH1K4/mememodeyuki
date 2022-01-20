@@ -32,11 +32,18 @@ idtxt = "**Send The Template Number**"
 @bot.on_message(filters.command(commands=['meme']) & filters.private)
 async def meme1(bot, msg: Message):
     chat = msg.chat
-    await bot.send_message(chat.id,"**Meme Generator @YukinonTheCuteBot")
+    await bot.send_message(chat.id,"**Meme Generator @Yukinonthecutebot**")
     idt =  await bot.ask(
         chat.id,idtxt
     )
+    try:
+        int(idt.text)
+    except Exception:
+        await idt.delete()
+        await msg.reply("**Send A Number Between 1 And 100 Baaaka!**")
+        return
     id = idt.text
+
     data = requests.get('https://api.imgflip.com/get_memes').json()['data']['memes']
     images = [{'name':image['name'],'url':image['url'],'id':image['id']} for image in data]
     text00 = await bot.ask(
