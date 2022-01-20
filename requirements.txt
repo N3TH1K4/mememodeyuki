@@ -1,3 +1,8 @@
 telethon
 requests
 urllib3
+heroku3
+pymongo
+pyrogram
+pyromod
+TgCrypto
