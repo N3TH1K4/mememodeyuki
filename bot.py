@@ -30,6 +30,7 @@ API_TEXT ="blaaa"
 
 @bot.on_message(filters.command(commands=['meme']) & filters.private)
 async def meme1(bot, msg: Message,):
+    chat = msg.chat
     msg.reply(msg.chat.id,"yooo")
     api = await bot.ask(
         chat.id
