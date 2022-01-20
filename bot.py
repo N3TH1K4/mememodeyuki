@@ -43,17 +43,19 @@ async def meme1(bot, msg: Message):
         await msg.reply("**Send A Number Between 1 And 100 Baaaka!**")
         return
     id = idt.text
-
+    await idt.delete()
     data = requests.get('https://api.imgflip.com/get_memes').json()['data']['memes']
     images = [{'name':image['name'],'url':image['url'],'id':image['id']} for image in data]
     text00 = await bot.ask(
         chat.id,txt1
     )
     text0 = text00.text
+    await text00.delete()
     text11 =  await bot.ask(
         chat.id,txt2
     )
-    text1 = text11.text   
+    text1 = text11.text
+    await text11.delete()
     print("done")
     URL = 'https://api.imgflip.com/caption_image'
     params = {
