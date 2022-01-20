@@ -29,21 +29,11 @@ userAgent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) \
 txt1 = "**Send The First text**"
 txt2 = "**Send  The Second text**"
 idtxt = "**Send The Template Number**"
-@bot.on_message(filters.command(commands=['meme']) & filters.private)
+@bot.on_message(filters.command(commands=['meme1']))
 async def meme1(bot, msg: Message):
     chat = msg.chat
-    await bot.send_message(chat.id,"**Meme Generator @Yukinonthecutebot**")
-    idt =  await bot.ask(
-        chat.id,idtxt
-    )
-    try:
-        int(idt.text)
-    except Exception:
-        await idt.delete()
-        await msg.reply("**Send A Number Between 1 And 100 Baaaka!**")
-        return
-    id = idt.text
-    await idt.delete()
+    await bot.send_message(chat.id,"**Meme Generator @Yukinonthecutebot**\n\n`Template`: Drake Hotline Bling\n`Template ID`: 1")
+    id = 1
     data = requests.get('https://api.imgflip.com/get_memes').json()['data']['memes']
     images = [{'name':image['name'],'url':image['url'],'id':image['id']} for image in data]
     text00 = await bot.ask(
