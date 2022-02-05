@@ -327,6 +327,6 @@ async def meme1(bot, msg: Message):
     opener = urllib.request.URLopener()
     opener.addheader('User-Agent', userAgent)
     filename, headers = opener.retrieve(response['data']['url'], images[id-1]['name']+'.jpg')
-    await bot.send_photo(chat.id,filename,caption="Powered By @waifuNetwork)    
+    await bot.send_photo(chat.id,filename,caption="Powered By @waifuNetwork")    
     
 bot.run()    
