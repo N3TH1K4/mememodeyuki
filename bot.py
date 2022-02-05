@@ -1,4 +1,5 @@
 import requests
+import asyncio
 import urllib
 from pyrogram import filters, Client
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
@@ -33,28 +34,25 @@ idtxt = "**Send The Template Number**"
 async def meme1(bot, msg: Message):
     chat = msg.chat
     await bot.send_message(chat.id,"**Meme Generator @Yukinonthecutebot**\n\n`Template`: Drake Hotline Bling\n`Template ID`: 1")
-    idt = await bot.ask(
-        chat.id,idtxt
-    )
-    id = idt.text
+    id = 1
     data = requests.get('https://api.imgflip.com/get_memes').json()['data']['memes']
     images = [{'name':image['name'],'url':image['url'],'id':image['id']} for image in data]
     text00 = await bot.ask(
         chat.id,txt1
     )
     text0 = text00.text
-    await text00.delete()
     text11 =  await bot.ask(
         chat.id,txt2
     )
     text1 = text11.text
-    await text11.delete()
-    print("done")
+    await bot.send_message(chat.id,"**Getting The Meme Ready**")
+    await asyncio.sleep(3)
+    await delete()
     URL = 'https://api.imgflip.com/caption_image'
     params = {
           'username':username,
           'password':password,
-          'template_id':images[id]['id'],
+          'template_id':images[id-1]['id'],
           'text0':text0,
           'text1':text1
        }
@@ -74,12 +72,10 @@ async def meme1(bot, msg: Message):
         chat.id,txt1
     )
     text0 = text00.text
-    await text00.delete()
     text11 =  await bot.ask(
         chat.id,txt2
     )
     text1 = text11.text
-    await text11.delete()
     print("done")
     URL = 'https://api.imgflip.com/caption_image'
     params = {
@@ -107,12 +103,10 @@ async def meme1(bot, msg: Message):
         chat.id,txt1
     )
     text0 = text00.text
-    await text00.delete()
     text11 =  await bot.ask(
         chat.id,txt2
     )
     text1 = text11.text
-    await text11.delete()
     print("done")
     URL = 'https://api.imgflip.com/caption_image'
     params = {
@@ -139,12 +133,10 @@ async def meme1(bot, msg: Message):
         chat.id,txt1
     )
     text0 = text00.text
-    await text00.delete()
     text11 =  await bot.ask(
         chat.id,txt2
     )
     text1 = text11.text
-    await text11.delete()
     print("done")
     URL = 'https://api.imgflip.com/caption_image'
     params = {
@@ -171,12 +163,10 @@ async def meme1(bot, msg: Message):
         chat.id,txt1
     )
     text0 = text00.text
-    await text00.delete()
     text11 =  await bot.ask(
         chat.id,txt2
     )
     text1 = text11.text
-    await text11.delete()
     print("done")
     URL = 'https://api.imgflip.com/caption_image'
     params = {
@@ -203,12 +193,10 @@ async def meme1(bot, msg: Message):
         chat.id,txt1
     )
     text0 = text00.text
-    await text00.delete()
     text11 =  await bot.ask(
         chat.id,txt2
     )
     text1 = text11.text
-    await text11.delete()
     print("done")
     URL = 'https://api.imgflip.com/caption_image'
     params = {
@@ -235,12 +223,10 @@ async def meme1(bot, msg: Message):
         chat.id,txt1
     )
     text0 = text00.text
-    await text00.delete()
     text11 =  await bot.ask(
         chat.id,txt2
     )
     text1 = text11.text
-    await text11.delete()
     print("done")
     URL = 'https://api.imgflip.com/caption_image'
     params = {
