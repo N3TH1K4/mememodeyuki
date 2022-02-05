@@ -27,8 +27,8 @@ images = [{'name':image['name'],'url':image['url'],'id':image['id']} for image i
 userAgent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) \
     AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.117 \
     Safari/537.36'
-txt1 = "**Send The First text**"
-txt2 = "**Send  The Second text**"
+txt1 = "**Send The First text**😊🤍 "
+txt2 = "**Send  The Second text**🥴❤️"
 idtxt = "**Send The Template Number**"
 @bot.on_message(filters.command(commands=['meme1']))
 async def meme1(bot, msg: Message):
@@ -57,7 +57,7 @@ async def meme1(bot, msg: Message):
     opener = urllib.request.URLopener()
     opener.addheader('User-Agent', userAgent)
     filename, headers = opener.retrieve(response['data']['url'], images[id-1]['name']+'.jpg')
-    await bot.send_photo(chat.id,filename)
+    await bot.send_photo(chat.id,filename,caption="♥️🔰 Powered By @waifuNetwork") 
 @bot.on_message(filters.command(commands=['meme2']))
 async def meme1(bot, msg: Message):
     chat = msg.chat
@@ -86,7 +86,7 @@ async def meme1(bot, msg: Message):
     opener = urllib.request.URLopener()
     opener.addheader('User-Agent', userAgent)
     filename, headers = opener.retrieve(response['data']['url'], images[id-1]['name']+'.jpg')
-    await bot.send_photo(chat.id,filename)  
+    await bot.send_photo(chat.id,filename,caption="♥️🔰 Powered By @waifuNetwork")   
     
     
 @bot.on_message(filters.command(commands=['meme3']))
@@ -117,7 +117,7 @@ async def meme1(bot, msg: Message):
     opener = urllib.request.URLopener()
     opener.addheader('User-Agent', userAgent)
     filename, headers = opener.retrieve(response['data']['url'], images[id-1]['name']+'.jpg')
-    await bot.send_photo(chat.id,filename)
+    await bot.send_photo(chat.id,filename,caption="♥️🔰 Powered By @waifuNetwork") 
     
 @bot.on_message(filters.command(commands=['meme4']))
 async def meme1(bot, msg: Message):
@@ -147,7 +147,7 @@ async def meme1(bot, msg: Message):
     opener = urllib.request.URLopener()
     opener.addheader('User-Agent', userAgent)
     filename, headers = opener.retrieve(response['data']['url'], images[id-1]['name']+'.jpg')
-    await bot.send_photo(chat.id,filename)
+    await bot.send_photo(chat.id,filename,caption="♥️🔰 Powered By @waifuNetwork") 
     
 @bot.on_message(filters.command(commands=['meme5']))
 async def meme1(bot, msg: Message):
@@ -177,7 +177,7 @@ async def meme1(bot, msg: Message):
     opener = urllib.request.URLopener()
     opener.addheader('User-Agent', userAgent)
     filename, headers = opener.retrieve(response['data']['url'], images[id-1]['name']+'.jpg')
-    await bot.send_photo(chat.id,filename)    
+    await bot.send_photo(chat.id,filename,caption="♥️🔰 Powered By @waifuNetwork")     
     
 @bot.on_message(filters.command(commands=['meme6']))
 async def meme1(bot, msg: Message):
@@ -207,7 +207,7 @@ async def meme1(bot, msg: Message):
     opener = urllib.request.URLopener()
     opener.addheader('User-Agent', userAgent)
     filename, headers = opener.retrieve(response['data']['url'], images[id-1]['name']+'.jpg')
-    await bot.send_photo(chat.id,filename)
+    await bot.send_photo(chat.id,filename,caption="♥️🔰 Powered By @waifuNetwork") 
     
 @bot.on_message(filters.command(commands=['meme7']))
 async def meme1(bot, msg: Message):
@@ -237,7 +237,7 @@ async def meme1(bot, msg: Message):
     opener = urllib.request.URLopener()
     opener.addheader('User-Agent', userAgent)
     filename, headers = opener.retrieve(response['data']['url'], images[id-1]['name']+'.jpg')
-    await bot.send_photo(chat.id,filename)    
+    await bot.send_photo(chat.id,filename,caption="♥️🔰 Powered By @waifuNetwork")     
 
 @bot.on_message(filters.command(commands=['meme8']))
 async def meme1(bot, msg: Message):
@@ -267,7 +267,7 @@ async def meme1(bot, msg: Message):
     opener = urllib.request.URLopener()
     opener.addheader('User-Agent', userAgent)
     filename, headers = opener.retrieve(response['data']['url'], images[id-1]['name']+'.jpg')
-    await bot.send_photo(chat.id,filename)        
+    await bot.send_photo(chat.id,filename,caption="♥️🔰 Powered By @waifuNetwork")         
     
 @bot.on_message(filters.command(commands=['meme9']))
 async def meme1(bot, msg: Message):
@@ -297,7 +297,7 @@ async def meme1(bot, msg: Message):
     opener = urllib.request.URLopener()
     opener.addheader('User-Agent', userAgent)
     filename, headers = opener.retrieve(response['data']['url'], images[id-1]['name']+'.jpg')
-    await bot.send_photo(chat.id,filename)            
+    await bot.send_photo(chat.id,filename,caption="♥️🔰 Powered By @waifuNetwork")             
 
 @bot.on_message(filters.command(commands=['meme10']))
 async def meme1(bot, msg: Message):
@@ -327,6 +327,6 @@ async def meme1(bot, msg: Message):
     opener = urllib.request.URLopener()
     opener.addheader('User-Agent', userAgent)
     filename, headers = opener.retrieve(response['data']['url'], images[id-1]['name']+'.jpg')
-    await bot.send_photo(chat.id,filename,caption="Powered By @waifuNetwork")    
+    await bot.send_photo(chat.id,filename,caption="♥️🔰 Powered By @waifuNetwork")    
     
 bot.run()    
