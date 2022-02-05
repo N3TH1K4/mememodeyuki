@@ -45,9 +45,9 @@ async def meme1(bot, msg: Message):
         chat.id,txt2
     )
     text1 = text11.text
-    await bot.send_message(chat.id,"**Getting The Meme Ready**")
+    d = await bot.send_message(chat.id,"**Getting The Meme Ready**")
     await asyncio.sleep(3)
-    await delete()
+    return await d.delete()
     URL = 'https://api.imgflip.com/caption_image'
     params = {
           'username':username,
