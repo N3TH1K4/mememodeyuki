@@ -152,7 +152,7 @@ async def meme1(bot, msg: Message):
 @bot.on_message(filters.command(commands=['meme5']))
 async def meme1(bot, msg: Message):
     chat = msg.chat
-    await bot.send_message(chat.id,"**Meme Generator @Yukinonthecutebot**\n\n`Template`: Left Exit 12 Off Ramp\n`Template ID`: 5")
+    await bot.send_message(chat.id,"**Meme Generator @Yukinonthecutebot**\n\n`Template`: UNO Draw 25 Cards\n`Template ID`: 5")
     id = 5
     data = requests.get('https://api.imgflip.com/get_memes').json()['data']['memes']
     images = [{'name':image['name'],'url':image['url'],'id':image['id']} for image in data]
@@ -182,7 +182,7 @@ async def meme1(bot, msg: Message):
 @bot.on_message(filters.command(commands=['meme6']))
 async def meme1(bot, msg: Message):
     chat = msg.chat
-    await bot.send_message(chat.id,"**Meme Generator @Yukinonthecutebot**\n\n`Template`: UNO Draw 25 Cards\n`Template ID`: 6")
+    await bot.send_message(chat.id,"**Meme Generator @Yukinonthecutebot**\n\n`Template`: Left Exit 12 Off Ramp\n`Template ID`: 6")
     id = 6
     data = requests.get('https://api.imgflip.com/get_memes').json()['data']['memes']
     images = [{'name':image['name'],'url':image['url'],'id':image['id']} for image in data]
@@ -238,5 +238,95 @@ async def meme1(bot, msg: Message):
     opener.addheader('User-Agent', userAgent)
     filename, headers = opener.retrieve(response['data']['url'], images[id-1]['name']+'.jpg')
     await bot.send_photo(chat.id,filename)    
+
+@bot.on_message(filters.command(commands=['meme8']))
+async def meme1(bot, msg: Message):
+    chat = msg.chat
+    await bot.send_message(chat.id,"**Meme Generator @Yukinonthecutebot**\n\n`Template`: Change My Mind\n`Template ID`: 8")
+    id = 8
+    data = requests.get('https://api.imgflip.com/get_memes').json()['data']['memes']
+    images = [{'name':image['name'],'url':image['url'],'id':image['id']} for image in data]
+    text00 = await bot.ask(
+        chat.id,txt1
+    )
+    text0 = text00.text
+    text11 =  await bot.ask(
+        chat.id,txt2
+    )
+    text1 = text11.text
+    print("done")
+    URL = 'https://api.imgflip.com/caption_image'
+    params = {
+          'username':username,
+          'password':password,
+          'template_id':images[id-1]['id'],
+          'text0':text0,
+          'text1':text1
+       }
+    response = requests.request('POST',URL,params=params).json()
+    opener = urllib.request.URLopener()
+    opener.addheader('User-Agent', userAgent)
+    filename, headers = opener.retrieve(response['data']['url'], images[id-1]['name']+'.jpg')
+    await bot.send_photo(chat.id,filename)        
+    
+@bot.on_message(filters.command(commands=['meme9']))
+async def meme1(bot, msg: Message):
+    chat = msg.chat
+    await bot.send_message(chat.id,"**Meme Generator @Yukinonthecutebot**\n\n`Template`: Gru's Plan\n`Template ID`: 9")
+    id = 9
+    data = requests.get('https://api.imgflip.com/get_memes').json()['data']['memes']
+    images = [{'name':image['name'],'url':image['url'],'id':image['id']} for image in data]
+    text00 = await bot.ask(
+        chat.id,txt1
+    )
+    text0 = text00.text
+    text11 =  await bot.ask(
+        chat.id,txt2
+    )
+    text1 = text11.text
+    print("done")
+    URL = 'https://api.imgflip.com/caption_image'
+    params = {
+          'username':username,
+          'password':password,
+          'template_id':images[id-1]['id'],
+          'text0':text0,
+          'text1':text1
+       }
+    response = requests.request('POST',URL,params=params).json()
+    opener = urllib.request.URLopener()
+    opener.addheader('User-Agent', userAgent)
+    filename, headers = opener.retrieve(response['data']['url'], images[id-1]['name']+'.jpg')
+    await bot.send_photo(chat.id,filename)            
+
+@bot.on_message(filters.command(commands=['meme10']))
+async def meme1(bot, msg: Message):
+    chat = msg.chat
+    await bot.send_message(chat.id,"**Meme Generator @Yukinonthecutebot**\n\n`Template`: Bernie I Am Once Again Asking For Your Support\n`Template ID`: 10")
+    id = 10
+    data = requests.get('https://api.imgflip.com/get_memes').json()['data']['memes']
+    images = [{'name':image['name'],'url':image['url'],'id':image['id']} for image in data]
+    text00 = await bot.ask(
+        chat.id,txt1
+    )
+    text0 = text00.text
+    text11 =  await bot.ask(
+        chat.id,txt2
+    )
+    text1 = text11.text
+    print("done")
+    URL = 'https://api.imgflip.com/caption_image'
+    params = {
+          'username':username,
+          'password':password,
+          'template_id':images[id-1]['id'],
+          'text0':text0,
+          'text1':text1
+       }
+    response = requests.request('POST',URL,params=params).json()
+    opener = urllib.request.URLopener()
+    opener.addheader('User-Agent', userAgent)
+    filename, headers = opener.retrieve(response['data']['url'], images[id-1]['name']+'.jpg')
+    await bot.send_photo(chat.id,filename,caption="Powered By @waifuNetwork)    
     
 bot.run()    
