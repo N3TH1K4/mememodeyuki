@@ -12,7 +12,7 @@ from pyrogram.errors import (
 
 apiid = 4091096
 apihash = '6bb0682b4af56456201c3b9d8b99c94a'
-bottoken = '2025919134:AAEiMUp8gZ3W2QD-YAgDpGZXcYol_RfEPWg'
+bottoken = '2025919134:AAEtaYWwSrYcIQsK7-1zn5aA581bb0hDJNc'
 username = 'TROJ3N'
 password = 'Nethika123'
 # We have to manually call "start" if we want an explicit bot token
